@@ -455,7 +455,7 @@ Transform:
   m_GameObject: {fileID: 857270789}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.467, z: 0}
+  m_LocalPosition: {x: -0, y: 0.4556, z: 0}
   m_LocalScale: {x: 0.06738967, y: 0.06738967, z: 0.06738967}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -566,14 +566,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _jumpKey: 32
-  _jumpSpeed: 2
+  _jumpForce: 5
   _gravity: 10
-  _groundSnap: 0.02
-  _alignUpWithOutward: 1
   _isGrounded: 0
-  _surfaceRadius: 0
-  _currentRadius: 0
-  _radialVelocity: 0
+  _boxSize: {x: 0.1, y: 0.06}
+  _boxOffset: 0.34
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &1042517080
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 1625379931}
   - component: {fileID: 1625379933}
   - component: {fileID: 1625379934}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Earth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -785,8 +785,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0043342956, y: 0.021669572}
-  m_Radius: 0.37380096
+  m_Offset: {x: -0.0015631333, y: 0.02232486}
+  m_Radius: 0.36331668
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
