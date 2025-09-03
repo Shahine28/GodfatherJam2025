@@ -1,24 +1,29 @@
 using NaughtyAttributes;
 using UnityEngine;
 
+
 public class PlayerJump : MonoBehaviour
 {
-    [Header("Jump & Gravity")]
+    [Header("Jump Settings")]
     [SerializeField] private KeyCode _jumpKey = KeyCode.Space;
-    [SerializeField] private float _jumpForce = 5f;   // impulsion initiale
-    [SerializeField] private float _gravity = 20f;    // force vers le pivot
+    [SerializeField] private float _jumpForce = 5f;
 
     [Header("Ground Check")] 
     [SerializeField, ReadOnly] private bool _isGrounded;
+    public bool IsGrounded => _isGrounded;
+
     [SerializeField] private Vector2 _boxSize = new Vector2(0.5f, 0.2f);
     [SerializeField] private float _boxOffset = 0.1f;
     [SerializeField] private LayerMask _groundLayer;
 
-    private Transform _pivot; // centre de la planète
-    private Vector3 _velocity; // vitesse actuelle (radiale)
+    private Transform _pivot;        // centre de la planète
+    private Rigidbody2D _rb;
 
     private void Awake()
     {
+        _rb = GetComponent<Rigidbody2D>();
+        _rb.gravityScale = 0f; // on ne veut pas de gravité Unity classique
+
         _pivot = transform.parent; 
         if (_pivot == null)
             Debug.LogWarning("[PlayerJump] Le Player doit être enfant d’un pivot centré sur la planète.");
@@ -28,36 +33,33 @@ public class PlayerJump : MonoBehaviour
     {
         GroundCheck();
 
-        if (_isGrounded)
+        if (_isGrounded && Input.GetKeyDown(_jumpKey))
         {
-            _velocity = Vector3.zero; // reset vitesse
-
-            if (Input.GetKeyDown(_jumpKey))
-            {
-                // impulsion vers l’extérieur (depuis pivot)
-                Vector3 outward = (transform.position - _pivot.position).normalized;
-                _velocity = outward * _jumpForce;
-                _isGrounded = false;
-            }
+            Jump();
         }
-        else
-        {
-            // appliquer gravité vers le pivot
-            Vector3 toCenter = (_pivot.position - transform.position).normalized;
-            _velocity += toCenter * _gravity * Time.deltaTime;
-        }
-
-        // applique le déplacement
-        transform.position += _velocity * Time.deltaTime;
-
-        // --- FORCER L'ORIENTATION : pieds vers la planète ---
+        
         Vector3 outwardDir = (transform.position - _pivot.position).normalized;
-        transform.up = outwardDir; // "tête vers l'extérieur", "pieds vers le centre"
+        transform.up = outwardDir;
+    }
+
+    private void Jump()
+    {
+        Vector3 outward = (transform.position - _pivot.position).normalized;
+        _rb.linearVelocity = Vector2.zero; // reset pour un saut clean
+        _rb.AddForce(outward * _jumpForce, ForceMode2D.Impulse);
+        _isGrounded = false;
     }
 
     private void GroundCheck()
     {
-        _isGrounded = Physics2D.BoxCast(transform.position, _boxSize, transform.eulerAngles.z, -transform.up, _boxOffset, _groundLayer);
+        _isGrounded = Physics2D.BoxCast(
+            transform.position,
+            _boxSize,
+            transform.eulerAngles.z,
+            -transform.up,
+            _boxOffset,
+            _groundLayer
+        );
     }
 
     private void OnDrawGizmos()
