@@ -4,7 +4,10 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Earth
+  - Planet
+  - Meteor
+  - SolarPanel
+  - Sun
   layers:
   - Default
   - TransparentFX
@@ -13,7 +16,7 @@ TagManager:
   - Water
   - UI
   - SolarPanel
-  - 
+  - Sun
   - 
   - 
   - 

@@ -8,6 +8,7 @@ public class EarthBehavior : MonoBehaviour
     [SerializeField] private float _initialRotationSpeed = 10f;
     [SerializeField] private float _maxRotationSpeed = 1000f;
     [SerializeField, ReadOnly] private float _rotationSpeed;
+    public float RotationSpeed => _rotationSpeed;
 
     [Header("Rotation Speed Control")]
     [SerializeField, Range(0.01f, 1f)] private float _stepPerClick = 0.05f; // avance du curseur de la courbe par clic
@@ -27,7 +28,7 @@ public class EarthBehavior : MonoBehaviour
     }
 
     [Button]
-    private void IncreaseRotationSpeed()
+    public void IncreaseRotationSpeed()
     {
         _curveCursor = Mathf.Clamp01(_curveCursor + _stepPerClick);
         float shaped = _earthRotationEvolutionCurve.Evaluate(_curveCursor);

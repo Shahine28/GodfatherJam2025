@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
@@ -5,8 +6,19 @@ public class PlayerCollision : MonoBehaviour
 {
     [SerializeField] private LayerMask _blockingLayer;
     private int _blockDirection; // -1 = gauche bloquée, 1 = droite bloquée, 0 = rien
-
     public int BlockDirection => _blockDirection;
+    
+    
+    private PlayerBattery _playerBattery;
+
+    private void Start()
+    {
+        _playerBattery = GetComponent<PlayerBattery>();
+        if (_playerBattery == null)
+        {
+            Debug.LogError("PlayerBattery not found on the player.");
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -22,6 +34,11 @@ public class PlayerCollision : MonoBehaviour
             _blockDirection = -1; // gauche bloquée
         else if (side < -0.5f)
             _blockDirection = 1;  // droite bloquée
+
+        if (collision.gameObject.CompareTag("Meteor"))
+        {
+            _playerBattery.ConsumeBatterySlot();
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
