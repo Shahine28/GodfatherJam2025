@@ -1,80 +1,73 @@
 using NaughtyAttributes;
 using UnityEngine;
 
+
 public class PlayerJump : MonoBehaviour
 {
-    [Header("Jump & Gravity")]
+    [Header("Jump Settings")]
     [SerializeField] private KeyCode _jumpKey = KeyCode.Space;
-    [SerializeField] private float _jumpSpeed = 5f;          // vitesse de départ (unités/s)
-    [SerializeField] private float _gravity = 20f;           // accélération vers le centre (unités/s²)
-    [SerializeField] private float _groundSnap = 0.02f;      // marge pour recoller au sol
+    [SerializeField] private float _jumpForce = 5f;
 
-    [Header("Orientation")]
-    [SerializeField] private bool _alignUpWithOutward = true; // aligne l'Up du joueur vers l'extérieur
-
-    [Header("Debug")]
+    [Header("Ground Check")] 
     [SerializeField, ReadOnly] private bool _isGrounded;
-    [SerializeField, ReadOnly] private float _surfaceRadius;   // rayon du sol (distance centre → surface)
-    [SerializeField, ReadOnly] private float _currentRadius;   // rayon actuel
-    [SerializeField, ReadOnly] private float _radialVelocity;  // + = sort du centre ; - = tombe
+    public bool IsGrounded => _isGrounded;
 
-    private Transform _pivot; // normalement PlayerRotator (centre de la planète)
+    [SerializeField] private Vector2 _boxSize = new Vector2(0.5f, 0.2f);
+    [SerializeField] private float _boxOffset = 0.1f;
+    [SerializeField] private LayerMask _groundLayer;
+
+    private Transform _pivot;        // centre de la planète
+    private Rigidbody2D _rb;
 
     private void Awake()
     {
-        _pivot = transform.parent; // pivot = centre
-        if (_pivot == null)
-            Debug.LogWarning("[PlanetJump2D] Le Player doit être enfant d’un pivot centré sur la planète.");
-    }
+        _rb = GetComponent<Rigidbody2D>();
+        _rb.gravityScale = 0f; // on ne veut pas de gravité Unity classique
 
-    private void Start()
-    {
-        // On prend la distance initiale comme rayon de surface
-        _surfaceRadius = transform.localPosition.magnitude;
-        _currentRadius = _surfaceRadius;
-        _isGrounded = true;
+        _pivot = transform.parent; 
+        if (_pivot == null)
+            Debug.LogWarning("[PlayerJump] Le Player doit être enfant d’un pivot centré sur la planète.");
     }
 
     private void Update()
     {
-        // Input saut
-        if (Input.GetKeyDown(_jumpKey) && _isGrounded)
-        {
-            _isGrounded = false;
-            _radialVelocity = _jumpSpeed; // impulsion vers l’extérieur
-        }
+        GroundCheck();
 
-        SimulateRadialMotion();
-
-        if (_alignUpWithOutward && _pivot != null)
+        if (_isGrounded && Input.GetKeyDown(_jumpKey))
         {
-            Vector3 outward = (transform.position - _pivot.position).normalized;
-            transform.up = outward; // le joueur "regarde" vers l’extérieur
+            Jump();
         }
+        
+        Vector3 outwardDir = (transform.position - _pivot.position).normalized;
+        transform.up = outwardDir;
     }
 
-    private void SimulateRadialMotion()
+    private void Jump()
     {
-        // Direction radiale locale (ne change pas avec la rotation du pivot)
-        Vector3 localDir = transform.localPosition.sqrMagnitude > 0.000001f
-            ? transform.localPosition.normalized
-            : Vector3.up; // fallback
+        Vector3 outward = (transform.position - _pivot.position).normalized;
+        _rb.linearVelocity = Vector2.zero; // reset pour un saut clean
+        _rb.AddForce(outward * _jumpForce, ForceMode2D.Impulse);
+        _isGrounded = false;
+    }
 
-        if (!_isGrounded)
-        {
-            _radialVelocity -= _gravity * Time.deltaTime;               // gravité vers le centre
-            _currentRadius  += _radialVelocity * Time.deltaTime;        // intégration simple
+    private void GroundCheck()
+    {
+        _isGrounded = Physics2D.BoxCast(
+            transform.position,
+            _boxSize,
+            transform.eulerAngles.z,
+            -transform.up,
+            _boxOffset,
+            _groundLayer
+        );
+    }
 
-            // Contact avec la surface : on coupe la gravité et on recolle
-            if (_currentRadius <= _surfaceRadius + _groundSnap && _radialVelocity <= 0f)
-            {
-                _currentRadius  = _surfaceRadius;
-                _radialVelocity = 0f;
-                _isGrounded     = true;
-            }
-        }
-
-        // Applique la nouvelle position en conservant l’angle d’orbite
-        transform.localPosition = localDir * _currentRadius;
+    private void OnDrawGizmos()
+    {
+        Matrix4x4 oldMatrix = Gizmos.matrix;
+        Gizmos.matrix = Matrix4x4.TRS(transform.position - transform.up * _boxOffset, transform.rotation, Vector3.one);
+        Gizmos.color = _isGrounded ? Color.green : Color.red;
+        Gizmos.DrawWireCube(Vector3.zero, _boxSize);
+        Gizmos.matrix = oldMatrix;
     }
 }
