@@ -179,5 +179,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _planet: {fileID: 0}
-  _gravityForce: 5
+  _gravityForce: 0.5
   _gravityDistance: 5
