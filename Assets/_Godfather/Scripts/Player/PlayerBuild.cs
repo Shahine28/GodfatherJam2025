@@ -13,12 +13,17 @@ public class PlayerBuild : MonoBehaviour
     private Transform _pivot; // centre de la planète
 
     private bool CanPlacePanel;
+    
+    private PlayerJump _playerJump;
+    private PlayerBattery _playerBattery;
     private void Awake()
     {
         _pivot = transform.parent;
         if (_pivot == null)
             Debug.LogWarning("[PlayerBuild] Le Player doit être enfant d’un pivot centré sur la planète.");
         CanPlacePanel = true;
+        _playerJump = GetComponent<PlayerJump>();
+        _playerBattery = GetComponent<PlayerBattery>();
     }
 
     private void Update()
@@ -38,11 +43,14 @@ public class PlayerBuild : MonoBehaviour
         Quaternion rotation = Quaternion.LookRotation(Vector3.forward, outward);
         
         Instantiate(_solarPanelPrefab, transform.position, rotation, _earth.transform);
+        
+        _playerBattery.ConsumeAllBattery();
     }
 
     public void CheckPanel()
     {
-        CanPlacePanel = !Physics2D.OverlapCircle(transform.position, _minDistanceBetweenPanels, _panelLayer);
+        CanPlacePanel = !Physics2D.OverlapCircle(transform.position, _minDistanceBetweenPanels, _panelLayer)
+        && _playerJump.IsGrounded && _playerBattery.IsBatteryFull;
     }
     private void OnDrawGizmosSelected()
     {

@@ -10,6 +10,10 @@ public class PlanetGravity : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        if (_planet == null)
+        {
+            _planet = GameObject.FindWithTag("Planet");
+        }
     }
 
     // Update is called once per frame

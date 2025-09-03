@@ -6,6 +6,8 @@ public class PlayerRotator : MonoBehaviour
     [SerializeField] private float _rotationSpeed = 100f; 
     [SerializeField] private PlayerCollision _playerCollision; // référence au Player
 
+    [SerializeField] private EarthBehavior _earthBehavior;
+    
     private void Update()
     {
         float direction = 0f;
@@ -18,12 +20,17 @@ public class PlayerRotator : MonoBehaviour
         // Vérifie si on est bloqué dans cette direction
         if (direction != 0 && direction == _playerCollision.BlockDirection)
         {
-            direction = 0; // ignore cette entrée
+            direction = 0; 
         }
 
         if (direction != 0)
         {
-            transform.Rotate(Vector3.forward, direction * _rotationSpeed * Time.deltaTime, Space.Self);
+            float _finalRotationSpeed = _rotationSpeed;
+            if (_rotationSpeed < _earthBehavior.RotationSpeed)
+            {
+                _finalRotationSpeed = direction == 1f ? Mathf.Abs(_earthBehavior.RotationSpeed - _rotationSpeed) : _rotationSpeed + _earthBehavior.RotationSpeed;
+            }
+            transform.Rotate(Vector3.forward, direction * _finalRotationSpeed * Time.deltaTime, Space.Self);
         }
     }
 }
