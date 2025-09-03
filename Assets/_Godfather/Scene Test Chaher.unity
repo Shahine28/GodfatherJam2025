@@ -1073,17 +1073,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4187768082464260645, guid: c79e537ff9bf8a74b80c0704c15b0014, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6823709608234970810, guid: c79e537ff9bf8a74b80c0704c15b0014, type: 3}
       propertyPath: m_Name
       value: Sun
-      objectReference: {fileID: 0}
-    - target: {fileID: 7666972655546698442, guid: c79e537ff9bf8a74b80c0704c15b0014, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7872665714721692637, guid: c79e537ff9bf8a74b80c0704c15b0014, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1124,6 +1116,22 @@ PrefabInstance:
     - target: {fileID: 7872665714721692637, guid: c79e537ff9bf8a74b80c0704c15b0014, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004384382787767747, guid: c79e537ff9bf8a74b80c0704c15b0014, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004384382787767747, guid: c79e537ff9bf8a74b80c0704c15b0014, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004384382787767747, guid: c79e537ff9bf8a74b80c0704c15b0014, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004384382787767747, guid: c79e537ff9bf8a74b80c0704c15b0014, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
