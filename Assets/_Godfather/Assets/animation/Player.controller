@@ -88,7 +88,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 5807756024721738711}
-    m_Position: {x: 600, y: 240, z: 0}
+    m_Position: {x: 640, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3357641547989822101}
     m_Position: {x: 310, y: 160, z: 0}
@@ -137,7 +137,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Anim_Player
+  m_Name: Anim_Player (walk)
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
