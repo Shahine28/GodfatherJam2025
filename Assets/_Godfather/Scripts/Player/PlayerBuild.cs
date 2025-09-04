@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class PlayerBuild : MonoBehaviour
 {
@@ -33,12 +34,14 @@ public class PlayerBuild : MonoBehaviour
     private void Update()
     {
         CheckPanel();
-        if (Input.GetKeyDown(_buildKey))
-        {
-            TryPlacePanel();
-        }
     }
 
+    public void OnBuild(InputAction.CallbackContext context)
+    {
+        
+        TryPlacePanel();
+        
+    }
     private void TryPlacePanel()
     {
         if (!CanPlacePanel) return;
