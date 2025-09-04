@@ -312,6 +312,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 383041856}
   m_CullTransparentMesh: 1
+--- !u!4 &409719205 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2131145221330662914, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+  m_PrefabInstance: {fileID: 3085370953680799748}
+  m_PrefabAsset: {fileID: 0}
 --- !u!212 &469868715 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7286602988287413, guid: 0619a36f15a463d46ab4880bed353491, type: 3}
@@ -986,6 +991,7 @@ MonoBehaviour:
   _checkRadius: 1
   _maxAttempts: 10
   _spawnInterval: 5
+  _earthCenter: {fileID: 409719205}
   OnMeteoriteWarning:
     m_PersistentCalls:
       m_Calls: []
@@ -1986,6 +1992,10 @@ PrefabInstance:
       propertyPath: '_batterySprites.Array.data[3]'
       value: 
       objectReference: {fileID: 1233177369}
+    - target: {fileID: 2151636816194892829, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnBatteryRecharged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2151636816194892829, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: OnBatteryDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

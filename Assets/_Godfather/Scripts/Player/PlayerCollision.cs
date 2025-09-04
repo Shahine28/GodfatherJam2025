@@ -25,16 +25,13 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-        Debug.Log("coucou "+collision.collider.name);
-        
         if (!IsInLayerMask(collision.gameObject.layer, _blockingLayer)) return;
         Debug.Log("PlayerCollision " + collision.collider.name);
 
-        // On prend la première normale du contact
+
         Vector2 normal = collision.GetContact(0).normal;
 
-        // Produit vectoriel avec transform.up pour savoir si c’est gauche/droite
+
         float side = Vector3.Dot(normal, -transform.right);
 
         if (side > 0.5f)
@@ -44,7 +41,6 @@ public class PlayerCollision : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Meteor"))
         {
-            Debug.Log("Touch");
             OnPlayerHitByMeteor?.Invoke();
             _playerBattery.ConsumeBatterySlot();
         }
