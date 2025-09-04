@@ -982,7 +982,7 @@ MonoBehaviour:
     m_Bits: 128
   _checkRadius: 1
   _maxAttempts: 10
-  _spawnInterval: 5
+  _spawnInterval: 4
   OnMeteoriteWarning:
     m_PersistentCalls:
       m_Calls: []
@@ -1586,6 +1586,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1289478325
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1097864440481004499, guid: 0619a36f15a463d46ab4880bed353491, type: 3}
+      propertyPath: m_Name
+      value: Battery (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8450044145884532698, guid: 0619a36f15a463d46ab4880bed353491, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 8450044145884532698, guid: 0619a36f15a463d46ab4880bed353491, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.07999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 8450044145884532698, guid: 0619a36f15a463d46ab4880bed353491, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8450044145884532698, guid: 0619a36f15a463d46ab4880bed353491, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8450044145884532698, guid: 0619a36f15a463d46ab4880bed353491, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8450044145884532698, guid: 0619a36f15a463d46ab4880bed353491, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8450044145884532698, guid: 0619a36f15a463d46ab4880bed353491, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8450044145884532698, guid: 0619a36f15a463d46ab4880bed353491, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8450044145884532698, guid: 0619a36f15a463d46ab4880bed353491, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8450044145884532698, guid: 0619a36f15a463d46ab4880bed353491, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0619a36f15a463d46ab4880bed353491, type: 3}
 --- !u!1 &1427343172
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,19 +2730,19 @@ PrefabInstance:
     - target: {fileID: 2151636816194892829, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: '_batterySprites.Array.data[0]'
       value: 
-      objectReference: {fileID: 593121872}
+      objectReference: {fileID: 0}
     - target: {fileID: 2151636816194892829, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: '_batterySprites.Array.data[1]'
       value: 
-      objectReference: {fileID: 469868715}
+      objectReference: {fileID: 0}
     - target: {fileID: 2151636816194892829, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: '_batterySprites.Array.data[2]'
       value: 
-      objectReference: {fileID: 1091424639}
+      objectReference: {fileID: 0}
     - target: {fileID: 2151636816194892829, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: '_batterySprites.Array.data[3]'
       value: 
-      objectReference: {fileID: 1233177369}
+      objectReference: {fileID: 0}
     - target: {fileID: 2151636816194892829, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: OnBatteryDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2803,3 +2860,4 @@ SceneRoots:
   - {fileID: 1570083227}
   - {fileID: 1228267922}
   - {fileID: 242174653}
+  - {fileID: 1289478325}
