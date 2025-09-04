@@ -28,7 +28,7 @@ public class PlayerRotator : MonoBehaviour
             float _finalRotationSpeed = _rotationSpeed;
             if (_rotationSpeed < _earthBehavior.RotationSpeed)
             {
-                _finalRotationSpeed = direction == 1f ? Mathf.Abs(_earthBehavior.RotationSpeed - _rotationSpeed) : _rotationSpeed + _earthBehavior.RotationSpeed;
+                _finalRotationSpeed = _rotationSpeed + _earthBehavior.RotationSpeed;
             }
             transform.Rotate(Vector3.forward, direction * _finalRotationSpeed * Time.deltaTime, Space.Self);
         }
