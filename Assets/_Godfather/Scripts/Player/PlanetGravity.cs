@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlanetGravity : MonoBehaviour
 {
-
     [SerializeField] protected GameObject _planet;
     private Rigidbody2D _rb;
     [SerializeField] private float _gravityForce = 9.81f;

@@ -1,6 +1,7 @@
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 
 public class PlayerJump : MonoBehaviour
@@ -36,15 +37,17 @@ public class PlayerJump : MonoBehaviour
     {
         GroundCheck();
 
-        if (_isGrounded && Input.GetKeyDown(_jumpKey))
-        {
-            Jump();
-        }
-        
         Vector3 outwardDir = (transform.position - _pivot.position).normalized;
         transform.up = outwardDir;
     }
 
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (context.performed && _isGrounded)
+        {
+            Jump();
+        }
+    }
     private void Jump()
     {
         OnPlayerJump?.Invoke();
