@@ -28,6 +28,8 @@ public class MeteoriteSpawner : MonoBehaviour
     [SerializeField] private float _spawnInterval = 5f;
     private float _spawnTimer;
 
+[SerializeField] Transform _earthCenter;
+
     public UnityEvent OnMeteoriteWarning;
     public UnityEvent OnMeteoriteSpawned;
     private void Start()
@@ -138,7 +140,15 @@ public class MeteoriteSpawner : MonoBehaviour
 
         Destroy(warning);
 
-        Instantiate(_meteoritePrefab, spawnPos, Quaternion.identity);
+        var dx = _earthCenter.position.x - spawnPos.x;
+        var dy = _earthCenter.position.y - spawnPos.y;
+
+        var angle = Mathf.Atan2(dy, dx);
+        var angleDeg = Mathf.Rad2Deg * angle;
+        var rot = Quaternion.Euler(0,0,angleDeg+90);
+
+        var go = Instantiate(_meteoritePrefab, spawnPos, rot);
+
         OnMeteoriteSpawned?.Invoke();
     }
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2572210400405569399}
   - component: {fileID: 1093904214321402889}
   - component: {fileID: 5090515284373050614}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Meteor
   m_TagString: Meteor
   m_Icon: {fileID: 0}
@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f0c1357b5bbed498b48b73e916c8ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _img: {fileID: 7909464543356598920}
   OnMeteorDestroyed:
     m_PersistentCalls:
       m_Calls:
@@ -231,6 +232,10 @@ PrefabInstance:
     - target: {fileID: 1261831209619005663, guid: 81a29c7096fc47d439c046bbd0450257, type: 3}
       propertyPath: m_Name
       value: Meteor_FX
+      objectReference: {fileID: 0}
+    - target: {fileID: 1261831209619005663, guid: 81a29c7096fc47d439c046bbd0450257, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5632462498015811214, guid: 81a29c7096fc47d439c046bbd0450257, type: 3}
       propertyPath: playOnAwake

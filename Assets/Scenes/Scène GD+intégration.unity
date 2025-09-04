@@ -983,6 +983,7 @@ MonoBehaviour:
   _checkRadius: 1
   _maxAttempts: 10
   _spawnInterval: 4
+  _earthCenter: {fileID: 1990405358}
   OnMeteoriteWarning:
     m_PersistentCalls:
       m_Calls: []
@@ -2111,6 +2112,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1705187829 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7800886001400884474, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+  m_PrefabInstance: {fileID: 7377938806588068349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1743818903 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1299564457288672758, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+  m_PrefabInstance: {fileID: 7377938806588068349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1746109979 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3301515512738958648, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+  m_PrefabInstance: {fileID: 7377938806588068349}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1817046337
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,6 +2438,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4117133174580993057, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
   m_PrefabInstance: {fileID: 7377938806588068349}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1990405358 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8131847952482846975, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+  m_PrefabInstance: {fileID: 7377938806588068349}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1993822382
 GameObject:
   m_ObjectHideFlags: 0
@@ -2558,6 +2579,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 261}
   m_SizeDelta: {x: 966.6354, y: 178.1442}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!212 &2004087904 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8836731854275781242, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+  m_PrefabInstance: {fileID: 7377938806588068349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2018319328 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5849427182592021165, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+  m_PrefabInstance: {fileID: 7377938806588068349}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d40997796942d4445ab2cd3c2afd0300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7095374168370924174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2730,19 +2767,19 @@ PrefabInstance:
     - target: {fileID: 2151636816194892829, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: '_batterySprites.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1705187829}
     - target: {fileID: 2151636816194892829, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: '_batterySprites.Array.data[1]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1746109979}
     - target: {fileID: 2151636816194892829, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: '_batterySprites.Array.data[2]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2004087904}
     - target: {fileID: 2151636816194892829, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: '_batterySprites.Array.data[3]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1743818903}
     - target: {fileID: 2151636816194892829, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: OnBatteryDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2774,6 +2811,18 @@ PrefabInstance:
     - target: {fileID: 6428513009886723308, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: _initialRotationSpeed
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6428513009886723308, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnEarthHitByMeteorite.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6428513009886723308, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnEarthHitByMeteorite.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6428513009886723308, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnEarthHitByMeteorite.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8131847952482846975, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: m_LocalScale.x
@@ -2834,6 +2883,34 @@ PrefabInstance:
     - target: {fileID: 9086261147243630670, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: _jumpForce
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086261147243630670, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnPlayerJump.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086261147243630670, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnPlayerJump.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086261147243630670, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnPlayerJump.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2018319328}
+    - target: {fileID: 9086261147243630670, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnPlayerJump.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086261147243630670, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnPlayerJump.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayVFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086261147243630670, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnPlayerJump.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VFXPlayer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086261147243630670, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnPlayerJump.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
