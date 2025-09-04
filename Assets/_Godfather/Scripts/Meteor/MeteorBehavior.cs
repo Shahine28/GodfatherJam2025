@@ -3,6 +3,8 @@ using UnityEngine.Events;
 
 public class MeteorBehavior : MonoBehaviour
 {
+    [SerializeField] SpriteRenderer _img;
+
     public UnityEvent OnMeteorDestroyed;
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -18,7 +20,9 @@ public class MeteorBehavior : MonoBehaviour
         {
             other.gameObject.GetComponent<PlayerBattery>()?.ConsumeBatterySlot();
         }
+
         OnMeteorDestroyed?.Invoke();
-        Destroy(gameObject);
+        _img.enabled=false;
+        Destroy(gameObject, 1f);
     }
 }
