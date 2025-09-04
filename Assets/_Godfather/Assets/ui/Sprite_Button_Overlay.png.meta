@@ -126,6 +126,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -384,7 +410,18 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sprite_Button_Overide_0: -8919578689170726156
+      Sprite_Button_Overide_1: -3525949352715595531
+      Sprite_Button_Overide_10: 8020073006123276136
+      Sprite_Button_Overide_2: 7539003048679306146
+      Sprite_Button_Overide_3: -7114623146045252373
+      Sprite_Button_Overide_4: 4518954818460714314
+      Sprite_Button_Overide_5: -6378834421572539660
+      Sprite_Button_Overide_6: 7459424190618008485
+      Sprite_Button_Overide_7: 7755269297969858445
+      Sprite_Button_Overide_8: -4084791038547689846
+      Sprite_Button_Overide_9: 5842441468837198203
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
