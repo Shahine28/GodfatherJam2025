@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using NaughtyAttributes;
+using UnityEngine.Events;
 
 public class MeteoriteSpawner : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class MeteoriteSpawner : MonoBehaviour
     [Header("Meteorite Spawning")]
     [SerializeField] private float _spawnInterval = 5f;
     private float _spawnTimer;
+
+    public UnityEvent OnMeteoriteWarning;
+    public UnityEvent OnMeteoriteSpawned;
     private void Start()
     {
         _cam = Camera.main;
@@ -96,6 +100,7 @@ public class MeteoriteSpawner : MonoBehaviour
                 
                 
                 GameObject warning = Instantiate(_warningPrefab, _canvas.transform);
+                OnMeteoriteWarning?.Invoke();
                 RectTransform rt = warning.GetComponent<RectTransform>();
 
                 
@@ -134,5 +139,6 @@ public class MeteoriteSpawner : MonoBehaviour
         Destroy(warning);
 
         Instantiate(_meteoritePrefab, spawnPos, Quaternion.identity);
+        OnMeteoriteSpawned?.Invoke();
     }
 }
