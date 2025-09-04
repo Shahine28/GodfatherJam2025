@@ -172,7 +172,7 @@ MonoBehaviour:
   OnMeteorDestroyed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3866953429649996758}
+      - m_Target: {fileID: 9041597533383018691}
         m_TargetAssemblyTypeName: VFXPlayer, Assembly-CSharp
         m_MethodName: PlayVFX
         m_Mode: 1
@@ -233,21 +233,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meteor_FX
       objectReference: {fileID: 0}
-    - target: {fileID: 1261831209619005663, guid: 81a29c7096fc47d439c046bbd0450257, type: 3}
-      propertyPath: m_Layer
-      value: 8
+    - target: {fileID: 5632462498015811214, guid: 81a29c7096fc47d439c046bbd0450257, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 5632462498015811214, guid: 81a29c7096fc47d439c046bbd0450257, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5632462498015811214, guid: 81a29c7096fc47d439c046bbd0450257, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5632462498015811214, guid: 81a29c7096fc47d439c046bbd0450257, type: 3}
-      propertyPath: InitialModule.startSize.minScalar
+      propertyPath: ShapeModule.radiusThickness
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632462498015811214, guid: 81a29c7096fc47d439c046bbd0450257, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632462498015811214, guid: 81a29c7096fc47d439c046bbd0450257, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632462498015811214, guid: 81a29c7096fc47d439c046bbd0450257, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[1].countCurve.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632462498015811214, guid: 81a29c7096fc47d439c046bbd0450257, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[2].countCurve.scalar
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7173913800914565013, guid: 81a29c7096fc47d439c046bbd0450257, type: 3}
       propertyPath: m_LocalPosition.x
@@ -292,36 +300,21 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1261831209619005663, guid: 81a29c7096fc47d439c046bbd0450257, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3866953429649996758}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81a29c7096fc47d439c046bbd0450257, type: 3}
---- !u!1 &4281872442581360955 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1261831209619005663, guid: 81a29c7096fc47d439c046bbd0450257, type: 3}
-  m_PrefabInstance: {fileID: 3093595263610061284}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3866953429649996758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4281872442581360955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d40997796942d4445ab2cd3c2afd0300, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _vfx: {fileID: 7260979406045058922}
 --- !u!4 &5287353607459960433 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7173913800914565013, guid: 81a29c7096fc47d439c046bbd0450257, type: 3}
   m_PrefabInstance: {fileID: 3093595263610061284}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &7260979406045058922 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5632462498015811214, guid: 81a29c7096fc47d439c046bbd0450257, type: 3}
+--- !u!114 &9041597533383018691 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6310842207659673895, guid: 81a29c7096fc47d439c046bbd0450257, type: 3}
   m_PrefabInstance: {fileID: 3093595263610061284}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d40997796942d4445ab2cd3c2afd0300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
