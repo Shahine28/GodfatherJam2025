@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccffc0fc47920a649a7eb67e5408c4f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 100
+  _playerSpriteRenderer: {fileID: 0}
   _playerCollision: {fileID: 0}
+  _playerAnimator: {fileID: 0}
+  _rotationSpeed: 100
   _earthBehavior: {fileID: 0}
