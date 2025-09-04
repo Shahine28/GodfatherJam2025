@@ -1285,7 +1285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _initialRotationSpeed: 30
-  _maxRotationSpeed: 100
+  _maxRotationSpeed: 80
   _rotationSpeed: 39.6875
   _stepPerClick: 0.05
   _earthRotationEvolutionCurve:
