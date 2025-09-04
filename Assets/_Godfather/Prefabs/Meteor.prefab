@@ -166,6 +166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f0c1357b5bbed498b48b73e916c8ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnMeteorDestroyed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1093904214321402889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,5 +182,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _planet: {fileID: 0}
-  _gravityForce: 0.4
+  _gravityForce: 0.5
   _gravityDistance: 5
