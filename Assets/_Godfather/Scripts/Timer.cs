@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI _timerText;
+    TextMeshProUGUI _timerText;
     private float _timeElapsed;
     
 

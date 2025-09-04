@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerBuild : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class PlayerBuild : MonoBehaviour
     
     private PlayerJump _playerJump;
     private PlayerBattery _playerBattery;
+    
+    
+    public UnityEvent OnPlayerPlacePanel;
     private void Awake()
     {
         _pivot = transform.parent;
@@ -45,6 +49,8 @@ public class PlayerBuild : MonoBehaviour
         Instantiate(_solarPanelPrefab, transform.position, rotation, _earth.transform);
         
         _playerBattery.ConsumeAllBattery();
+        
+        OnPlayerPlacePanel?.Invoke();
     }
 
     public void CheckPanel()

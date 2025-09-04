@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
 public class PlayerCollision : MonoBehaviour
@@ -10,6 +11,8 @@ public class PlayerCollision : MonoBehaviour
     
     
     private PlayerBattery _playerBattery;
+    
+    public UnityEvent OnPlayerHitByMeteor;
 
     private void Start()
     {
@@ -37,6 +40,7 @@ public class PlayerCollision : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Meteor"))
         {
+            OnPlayerHitByMeteor?.Invoke();
             _playerBattery.ConsumeBatterySlot();
         }
     }

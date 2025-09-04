@@ -1,5 +1,6 @@
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class PlayerJump : MonoBehaviour
@@ -18,6 +19,8 @@ public class PlayerJump : MonoBehaviour
 
     private Transform _pivot;        // centre de la planète
     private Rigidbody2D _rb;
+    
+    public UnityEvent OnPlayerJump;
 
     private void Awake()
     {
@@ -44,6 +47,7 @@ public class PlayerJump : MonoBehaviour
 
     private void Jump()
     {
+        OnPlayerJump?.Invoke();
         Vector3 outward = (transform.position - _pivot.position).normalized;
         _rb.linearVelocity = Vector2.zero; // reset pour un saut clean
         _rb.AddForce(outward * _jumpForce, ForceMode2D.Impulse);

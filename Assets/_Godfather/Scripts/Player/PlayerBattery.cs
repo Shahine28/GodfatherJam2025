@@ -17,6 +17,8 @@ public class PlayerBattery : MonoBehaviour
     [SerializeField] private Color _unchargedBatterySlotColor = Color.gray;
 
     public UnityEvent OnBatteryDeath;
+    public UnityEvent OnBatteryRecharged;
+    public UnityEvent OnBatteryConsumed;
 
     private void Start()
     {
@@ -43,13 +45,13 @@ public class PlayerBattery : MonoBehaviour
 
             // Éteindre le slot correspondant
             _batterySprites[_currentBatterySlots].color = _unchargedBatterySlotColor;
-
-            // Vérifie si plus de batterie
-            if (_currentBatterySlots == 0)
-            {
-                OnBatteryDeath?.Invoke();
-                Debug.Log("Battery empty - Player dies");
-            }
+            OnBatteryConsumed?.Invoke();
+        }
+        // Vérifie si plus de batterie
+        if (_currentBatterySlots == 0)
+        {
+            OnBatteryDeath?.Invoke();
+            Debug.Log("Battery empty - Player dies");
         }
     }
     
@@ -61,6 +63,7 @@ public class PlayerBattery : MonoBehaviour
         {
             _batterySprites[i].color = _unchargedBatterySlotColor;
         }
+        OnBatteryConsumed?.Invoke();
     }
 
     [Button]
@@ -72,6 +75,7 @@ public class PlayerBattery : MonoBehaviour
 
             Mathf.Clamp(_currentBatterySlots++, 0, _batterySlots);
         }
+        OnBatteryRecharged?.Invoke();
     }
     
     [Button]
@@ -81,5 +85,6 @@ public class PlayerBattery : MonoBehaviour
         {
             RechargeBatterySlot();
         }
+        OnBatteryRecharged?.Invoke();
     }
 }
