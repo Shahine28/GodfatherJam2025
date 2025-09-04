@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cha_PlaperCape_0: -7950014768427964549
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
