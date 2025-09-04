@@ -16,9 +16,14 @@ public class PlayerBattery : MonoBehaviour
     [SerializeField] private Color _chargedBatterySlotColor = Color.blue;
     [SerializeField] private Color _unchargedBatterySlotColor = Color.gray;
 
+    [Header("Unity Events")]
     public UnityEvent OnBatteryDeath;
     public UnityEvent OnBatteryRecharged;
     public UnityEvent OnBatteryConsumed;
+    
+    [Header("VFX")]
+    [SerializeField] private VFXPlayer _vfxRecharge;
+    
 
     private void Start()
     {
@@ -46,6 +51,11 @@ public class PlayerBattery : MonoBehaviour
             // Éteindre le slot correspondant
             _batterySprites[_currentBatterySlots].color = _unchargedBatterySlotColor;
             OnBatteryConsumed?.Invoke();
+            if (_currentBatterySlots == 0)
+            {
+                _vfxRecharge.StopVFX();
+            }
+            return;
         }
         // Vérifie si plus de batterie
         if (_currentBatterySlots == 0)
@@ -64,6 +74,7 @@ public class PlayerBattery : MonoBehaviour
             _batterySprites[i].color = _unchargedBatterySlotColor;
         }
         OnBatteryConsumed?.Invoke();
+        _vfxRecharge.StopVFX();
     }
 
     [Button]
@@ -71,6 +82,10 @@ public class PlayerBattery : MonoBehaviour
     {
         if (_currentBatterySlots < _batterySlots)
         {
+            if (_currentBatterySlots == 0)
+            {
+                _vfxRecharge.PlayVFX();
+            }
             _batterySprites[_currentBatterySlots].color = _chargedBatterySlotColor;
 
             Mathf.Clamp(_currentBatterySlots++, 0, _batterySlots);
