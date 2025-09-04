@@ -30,14 +30,12 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.3885217, y: 5.3885217, z: 5.3885217}
+  m_LocalScale: {x: 5.707457, y: 5.707457, z: 5.707457}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6380513928359851863}
   - {fileID: 2131145221330662914}
   - {fileID: 97702257806668215}
-  - {fileID: 1278008542408187228}
-  - {fileID: 1402949091698917478}
   - {fileID: 3566216839861058794}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -108,8 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c308a377596041428ed155ffc676c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialRotationSpeed: 10
-  _maxRotationSpeed: 200
+  _initialRotationSpeed: 30
+  _maxRotationSpeed: 90
   _rotationSpeed: 0
   _stepPerClick: 0.05
   _earthRotationEvolutionCurve:
@@ -315,7 +313,7 @@ GameObject:
   - component: {fileID: 1406925081537424810}
   - component: {fileID: 3617142912328262679}
   - component: {fileID: 6820705501886072964}
-  - component: {fileID: 8235491784614254415}
+  - component: {fileID: 1404615566411860019}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -456,7 +454,7 @@ MonoBehaviour:
   _jumpForce: 6
   _isGrounded: 0
   _boxSize: {x: 0.05, y: 0.06}
-  _boxOffset: 0.37
+  _boxOffset: 0.4
   _groundLayer:
     serializedVersion: 2
     m_Bits: 72
@@ -614,7 +612,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8235491784614254415
+--- !u!114 &1404615566411860019
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1007,130 +1005,6 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 5632462498015811214, guid: 8899506630836de409f99dada73ccb0e, type: 3}
   m_PrefabInstance: {fileID: 3708220085741612885}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &7840719107274403063
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 8131847952482846975}
-    m_Modifications:
-    - target: {fileID: 6530400381266611689, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_Name
-      value: SolarPanelPivot (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.283
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.196
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.0013796324
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.44474795
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.8956558
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -127.186
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
---- !u!4 &1402949091698917478 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-  m_PrefabInstance: {fileID: 7840719107274403063}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &7929703457428681165
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 8131847952482846975}
-    m_Modifications:
-    - target: {fileID: 6530400381266611689, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_Name
-      value: SolarPanelPivot (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.303
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.218
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.0013796324
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.8898959
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.45616364
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 54.28
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
---- !u!4 &1278008542408187228 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
-  m_PrefabInstance: {fileID: 7929703457428681165}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8245136615342022632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1232,12 +1106,24 @@ PrefabInstance:
       value: SolarPanelPivot
       objectReference: {fileID: 0}
     - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.33018667
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.33018667
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.33018667
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.221
+      value: 0.13096
       objectReference: {fileID: 0}
     - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.331
+      value: 0.36489
       objectReference: {fileID: 0}
     - target: {fileID: 9202985684608920721, guid: 1c6c8ce03edc4d74c86999e7286757b5, type: 3}
       propertyPath: m_LocalPosition.z
