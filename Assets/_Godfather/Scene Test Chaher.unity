@@ -1117,22 +1117,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8004384382787767747, guid: c79e537ff9bf8a74b80c0704c15b0014, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 8004384382787767747, guid: c79e537ff9bf8a74b80c0704c15b0014, type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 8004384382787767747, guid: c79e537ff9bf8a74b80c0704c15b0014, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8004384382787767747, guid: c79e537ff9bf8a74b80c0704c15b0014, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 1.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
