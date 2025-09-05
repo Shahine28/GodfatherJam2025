@@ -17,10 +17,6 @@ public class MeteorBehavior : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
-        else if (other.gameObject.CompareTag("Player"))
-        {
-            other.gameObject.GetComponent<PlayerBattery>()?.ConsumeBatterySlot();
-        }
 
         OnMeteorDestroyed?.Invoke();
         _img.enabled=false;
