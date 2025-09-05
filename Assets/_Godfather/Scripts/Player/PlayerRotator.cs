@@ -8,6 +8,9 @@ public class PlayerRotator : MonoBehaviour
     [SerializeField] private Animator _playerAnimator;
     [SerializeField] private float _rotationSpeed = 100f;
     [SerializeField] private EarthBehavior _earthBehavior;
+    
+    
+    [SerializeField] private PlayerJump _playerJump;
 
     private float _direction; // -1 droite, 1 gauche, 0 neutre
 
@@ -26,29 +29,35 @@ public class PlayerRotator : MonoBehaviour
 
     private void Update()
     {
+        if (_playerJump != null)
+        {
+            if (!_playerJump.IsGrounded && transform.parent == _earthBehavior.transform)
+            {
+                // détache du parent (plus de rotation héritée)
+                transform.SetParent(null, true); 
+            }
+            else if (_playerJump.IsGrounded && transform.parent == null)
+            {
+                // rattache à la Terre
+                transform.SetParent(_earthBehavior.transform, true);
+            }
+        }
+        
         float direction = _direction;
 
-
         if (direction > 0f)
-            _playerSpriteRenderer.flipX = true;   // gauche
+            _playerSpriteRenderer.flipX = true;
         else if (direction < 0f)
-            _playerSpriteRenderer.flipX = false;  // droite
-
+            _playerSpriteRenderer.flipX = false;
 
         if (direction != 0 && direction == _playerCollision.BlockDirection)
         {
             direction = 0;
         }
 
-
         if (direction != 0)
         {
             float finalRotationSpeed = _rotationSpeed;
-            if (_rotationSpeed < _earthBehavior.RotationSpeed)
-            {
-                finalRotationSpeed = _rotationSpeed + _earthBehavior.RotationSpeed;
-            }
-
             _playerAnimator.SetBool("walk", true);
             transform.Rotate(Vector3.forward, direction * finalRotationSpeed * Time.deltaTime, Space.Self);
         }
