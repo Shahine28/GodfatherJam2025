@@ -2171,6 +2171,10 @@ PrefabInstance:
       propertyPath: OnPlayerPlacePanel.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1851755878}
+    - target: {fileID: 3569447907244819752, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: _gravityForce
+      value: 8.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4117133174580993057, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: m_Name
       value: Earth
@@ -2229,7 +2233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9086261147243630670, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: _jumpForce
-      value: 3
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 9086261147243630670, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: OnPlayerJump.m_PersistentCalls.m_Calls.Array.data[0].m_Target

@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _planet: {fileID: 0}
-  _gravityForce: 0.5
+  _gravityForce: 3.5
   _gravityDistance: 5
 --- !u!95 &5090515284373050614
 Animator:
