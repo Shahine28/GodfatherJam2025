@@ -16,7 +16,7 @@ public class PlanetGravity : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         SimulateGravity();
     }
