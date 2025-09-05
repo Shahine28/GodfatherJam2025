@@ -2162,6 +2162,10 @@ PrefabInstance:
       value: Earth
       objectReference: {fileID: 0}
     - target: {fileID: 6428513009886723308, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: _maxRotationSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6428513009886723308, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: OnEarthHitByMeteorite.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1851755878}
