@@ -2184,9 +2184,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 519420032}
     - target: {fileID: 6428513009886723308, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnCameraFlip.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6428513009886723308, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnCameraFlip.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6428513009886723308, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnCameraFlip.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1851755878}
+    - target: {fileID: 6428513009886723308, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnCameraFlip.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6428513009886723308, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnCameraFlip.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 6428513009886723308, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: OnEarthHitByMeteorite.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1851755878}
+    - target: {fileID: 6428513009886723308, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnCameraFlip.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6428513009886723308, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnCameraFlip.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: bdc9f67b219dc4d40b16b0174d97bedb, type: 3}
+    - target: {fileID: 6428513009886723308, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnCameraFlip.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7319488481650614699, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: OnPlayerHitByMeteor.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2423,6 +2455,10 @@ PrefabInstance:
     - target: {fileID: 6823709608234970810, guid: c79e537ff9bf8a74b80c0704c15b0014, type: 3}
       propertyPath: m_Name
       value: Sun
+      objectReference: {fileID: 0}
+    - target: {fileID: 7666972655546698442, guid: c79e537ff9bf8a74b80c0704c15b0014, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7872665714721692637, guid: c79e537ff9bf8a74b80c0704c15b0014, type: 3}
       propertyPath: m_LocalPosition.x
