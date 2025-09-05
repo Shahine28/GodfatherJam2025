@@ -778,7 +778,7 @@ MonoBehaviour:
         m_MethodName: PlayClip
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 72bd81c05155f574ba41726a57d7015f, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: 95d18fee4b8598b41b92629d94063177, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -2191,6 +2191,30 @@ PrefabInstance:
       propertyPath: OnPlayerHitByMeteor.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1851755878}
+    - target: {fileID: 7960401928499728256, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnSolarPanelDestroyed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960401928499728256, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnSolarPanelDestroyed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1851755878}
+    - target: {fileID: 7960401928499728256, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnSolarPanelDestroyed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayClip
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960401928499728256, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnSolarPanelDestroyed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960401928499728256, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnSolarPanelDestroyed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 25a7fa5a634584d4b96259f256c51dae, type: 3}
+    - target: {fileID: 7960401928499728256, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: OnSolarPanelDestroyed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8131847952482846975, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0068339
