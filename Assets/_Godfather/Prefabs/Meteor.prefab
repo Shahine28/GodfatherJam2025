@@ -233,6 +233,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Meteor_FX
       objectReference: {fileID: 0}
+    - target: {fileID: 1261831209619005663, guid: 81a29c7096fc47d439c046bbd0450257, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5632462498015811214, guid: 81a29c7096fc47d439c046bbd0450257, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 0.01
