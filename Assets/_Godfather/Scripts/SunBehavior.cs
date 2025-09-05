@@ -29,14 +29,12 @@ public class SunBehavior : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.gameObject.tag);
         if (other.gameObject.CompareTag("Player"))
         {
             OnPlayerDeathBySun?.Invoke();
         }
         else if (other.gameObject.CompareTag("SolarPanel"))
         {
-            Debug.Log("Recharge battery");
             if (_currentBatterySlotsInSunRay == 0)
             {
                 OnSunStartCharging?.Invoke();
