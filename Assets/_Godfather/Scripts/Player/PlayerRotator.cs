@@ -12,9 +12,9 @@ public class PlayerRotator : MonoBehaviour
     
     [SerializeField] private PlayerJump _playerJump;
 
-    private float _direction; // -1 droite, 1 gauche, 0 neutre
+    private float _direction; 
 
-    // === Appelé par l'Input System (Invoke Unity Events) ===
+
     public void OnMove(InputAction.CallbackContext context)
     {
         Vector2 inputValue = context.ReadValue<Vector2>();
@@ -42,6 +42,8 @@ public class PlayerRotator : MonoBehaviour
                 transform.SetParent(_earthBehavior.transform, true);
             }
         }
+
+        if (!_playerJump.IsGrounded) return;
         
         float direction = _direction;
 

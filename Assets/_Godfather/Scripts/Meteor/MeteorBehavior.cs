@@ -9,6 +9,7 @@ public class MeteorBehavior : MonoBehaviour
     public UnityEvent OnMeteorDestroyed;
     private void OnCollisionEnter2D(Collision2D other)
     {
+        
         if (other.gameObject.CompareTag("Planet"))
         {
             other.gameObject.GetComponent<EarthBehavior>()?.IncreaseRotationSpeed();
@@ -17,6 +18,7 @@ public class MeteorBehavior : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+
 
         OnMeteorDestroyed?.Invoke();
         _img.enabled=false;

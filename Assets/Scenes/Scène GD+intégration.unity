@@ -723,6 +723,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 791888564136719746, guid: 22b01bbdd44387d4487df5817437c889, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 813855139735194018, guid: 22b01bbdd44387d4487df5817437c889, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0
@@ -922,6 +926,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1352869011444011131, guid: 22b01bbdd44387d4487df5817437c889, type: 3}
+    - {fileID: 791888564136719746, guid: 22b01bbdd44387d4487df5817437c889, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22b01bbdd44387d4487df5817437c889, type: 3}
@@ -1223,6 +1228,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1851755878}
     - target: {fileID: 7319488481650614699, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
+      propertyPath: _blockingLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7319488481650614699, guid: 0835127020108a44eba8c721a04b0ed3, type: 3}
       propertyPath: OnPlayerHitByMeteor.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1851755878}
@@ -1488,9 +1497,9 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 736498855}
   - {fileID: 862833797}
+  - {fileID: 2126467613}
   - {fileID: 7095374168370924174}
   - {fileID: 294172704}
   - {fileID: 1570083227}
   - {fileID: 1228267922}
-  - {fileID: 2126467613}
   - {fileID: 1851755877}

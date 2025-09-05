@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -25,32 +27,30 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("Meteor"))
+        {
+            OnPlayerHitByMeteor?.Invoke();
+            _playerBattery.ConsumeBatterySlot();
+        }
+        
         if (!IsInLayerMask(collision.gameObject.layer, _blockingLayer)) return;
-        Debug.Log("PlayerCollision " + collision.collider.name);
-
-
+        
         Vector2 normal = collision.GetContact(0).normal;
-
-
+        
         float side = Vector3.Dot(normal, -transform.right);
 
         if (side > 0.5f)
             _blockDirection = -1; // gauche bloquée
         else if (side < -0.5f)
             _blockDirection = 1;  // droite bloquée
-
-        if (collision.gameObject.CompareTag("Meteor"))
-        {
-            OnPlayerHitByMeteor?.Invoke();
-            _playerBattery.ConsumeBatterySlot();
-        }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    public void OnCollisionExit2D(Collision2D collision)
     {
         if (!IsInLayerMask(collision.gameObject.layer, _blockingLayer)) return;
-        _blockDirection = 0; // plus bloqué
+        _blockDirection = 0; 
     }
+    
 
     private bool IsInLayerMask(int layer, LayerMask mask)
     {
