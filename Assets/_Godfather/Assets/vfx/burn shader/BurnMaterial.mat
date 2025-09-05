@@ -68,6 +68,7 @@ Material:
     m_Floats:
     - _Emission: 5
     - _EnableExternalAlpha: 0
+    - _IsGradient: 1
     - _Scale: 200
     - _ZWrite: 0
     m_Colors:
